@@ -93,14 +93,14 @@ sudo cp -r resources/* /usr/local/share/colossus-nan/resources/
 sudo cp "$BIN_BUILD" /usr/local/bin/"$BIN_INSTALL"
 sudo chmod +x /usr/local/bin/"$BIN_INSTALL"
 
-# Install application icon (from resources/icon.png)
-if [ -f resources/icon.png ]; then
-    echo "[CN-007] INSTALLING APPLICATION ICON..."
-    sudo mkdir -p /usr/local/share/icons/hicolor/256x256/apps
-    sudo cp resources/icon.png \
-        /usr/local/share/icons/hicolor/256x256/apps/colossus-nan.png
+# Install application colossus-nan (from resources/colossus-nan.png)
+if [ -f resources/colossus-nan.png ]; then
+    echo "[CN-007] INSTALLING APPLICATION colossus-nan..."
+    sudo mkdir -p /usr/local/share/colossus-nans/hicolor/256x256/apps
+    sudo cp resources/colossus-nan.png \
+        /usr/local/share/colossus-nans/hicolor/256x256/apps/colossus-nan.png
 else
-    echo "[CN-007] WARNING: resources/icon.png not found; skipping icon install."
+    echo "[CN-007] WARNING: resources/colossus-nan.png not found; skipping colossus-nan install."
 fi
 
 # Install .desktop entry for drun / app menus
