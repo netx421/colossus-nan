@@ -12,15 +12,56 @@ sleep 1
 # --------------------------------------------------------------------
 #  PACKAGE ACQUISITION
 # --------------------------------------------------------------------
-echo "[CN-007] ACQUIRING REQUIRED PACKAGES..."
+echo "[CN-007] DETECTING HOST DISTRIBUTION..."
 
-sudo pacman -S --needed --noconfirm \
-    base-devel \
-    gtk3 \
-    webkit2gtk-4.1 \
-    mpv \
-    yt-dlp \
-    pkgconf
+if command -v pacman &>/dev/null; then
+    echo "[CN-007] ARCH LINUX / MANJARO DETECTED"
+    sudo pacman -S --needed --noconfirm \
+        base-devel \
+        gtk3 \
+        webkit2gtk-4.1 \
+        mpv \
+        yt-dlp \
+        pkgconf
+
+elif command -v apt &>/dev/null; then
+    echo "[CN-007] DEBIAN / UBUNTU / LINUX MINT DETECTED"
+    sudo apt update
+    sudo apt install -y \
+        build-essential \
+        libgtk-3-dev \
+        libwebkit2gtk-4.0-dev \
+        mpv \
+        yt-dlp \
+        pkg-config
+
+elif command -v dnf &>/dev/null; then
+    echo "[CN-007] FEDORA DETECTED"
+    sudo dnf install -y \
+        gtk3-devel \
+        webkit2gtk4.0-devel \
+        mpv \
+        yt-dlp \
+        pkgconf \
+        gcc-c++
+
+elif command -v zypper &>/dev/null; then
+    echo "[CN-007] OPENSUSE DETECTED"
+    sudo zypper install -y \
+        gtk3-devel \
+        webkit2gtk3-devel \
+        mpv \
+        yt-dlp \
+        pkgconf \
+        gcc-c++
+
+else
+    echo "[CN-007] ERROR: Unsupported Linux distribution."
+    echo "Install the following dependencies manually:"
+    echo "    GTK3, WebKitGTK, mpv, yt-dlp, pkg-config, C++ build tools"
+    exit 1
+fi
+
 
 echo "[CN-007] SYSTEM DEPENDENCIES VERIFIED."
 
