@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=COLOSSUS: Network Access Node
+Comment=Retro terminal-style secure network access console
+Exec=COLOSSUS-NAN
+Icon=colossus-nan
+Terminal=false
+Categories=Network;WebBrowser;
+StartupNotify=true
+

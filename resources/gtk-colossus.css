@@ -1,0 +1,75 @@
+/* COLOSSUS MONOCHROME GTK THEME — repo local */
+
+/* Base window & text */
+window,
+dialog,
+.background {
+    background-color: #000000;
+    color: #d0d0d0;
+}
+
+/* Header bar / toolbars / titlebar */
+headerbar,
+.titlebar,
+.toolbar {
+    background-color: #000000;
+    color: #f0f0f0;
+    border-bottom: 1px solid #404040;
+    box-shadow: none;
+}
+
+/* Buttons */
+button,
+button.flat,
+.toolbar button {
+    background-color: #111111;
+    color: #f0f0f0;
+    border-radius: 0;
+    border: 1px solid #444444;
+    box-shadow: none;
+}
+
+button:hover,
+button.flat:hover,
+.toolbar button:hover {
+    background-color: #222222;
+}
+
+button:active,
+button:checked {
+    background-color: #333333;
+}
+
+/* URL bar / entries */
+entry,
+search-entry {
+    background-color: #050505;
+    color: #f0f0f0;
+    border-radius: 0;
+    border: 1px solid #444444;
+    box-shadow: none;
+}
+
+/* Status / bottom bars */
+.statusbar,
+GtkStatusbar {
+    background-color: #000000;
+    color: #d0d0d0;
+    border-top: 1px solid #404040;
+}
+
+/* Scrollbars */
+scrollbar {
+    background-color: #000000;
+}
+
+scrollbar slider {
+    background-color: #444444;
+    border-radius: 0;
+    border: 1px solid #666666;
+}
+
+scrollbar slider:hover {
+    background-color: #666666;
+}
+
